@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Check, Copy, Github, Linkedin, Mail } from 'lucide-react'
+import { Check, Copy, Mail } from 'lucide-react'
+import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 import { personal } from '@/lib/data'
 import { cn } from '@/lib/utils'
 
@@ -15,7 +16,7 @@ export function SocialLinks({ className }: { className?: string }) {
         aria-label="GitHub profile"
         className="grid h-11 w-11 place-items-center rounded-full border border-border bg-surface text-foreground transition-colors hover:bg-muted"
       >
-        <Github size={18} />
+        <GithubIcon size={18} />
       </a>
       <a
         href={personal.linkedin}
@@ -24,7 +25,7 @@ export function SocialLinks({ className }: { className?: string }) {
         aria-label="LinkedIn profile"
         className="grid h-11 w-11 place-items-center rounded-full border border-border bg-surface text-foreground transition-colors hover:bg-muted"
       >
-        <Linkedin size={18} />
+        <LinkedinIcon size={18} />
       </a>
       <a
         href={`mailto:${personal.email}`}

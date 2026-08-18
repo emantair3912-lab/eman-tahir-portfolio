@@ -85,8 +85,14 @@ function search(grid: Cell[][], mode: 'bfs' | 'dfs') {
   return { visited, path }
 }
 
+const EMPTY_GRID: Cell[][] = Array.from({ length: ROWS }, () =>
+  Array.from({ length: COLS }, () => 1 as Cell),
+)
+
 export function MazeVisualizer() {
-  const [grid, setGrid] = useState<Cell[][]>(() => generateMaze())
+  // Start with a deterministic grid so SSR and first client render match,
+  // then generate the random maze after mount to avoid hydration mismatch.
+  const [grid, setGrid] = useState<Cell[][]>(EMPTY_GRID)
   const [visited, setVisited] = useState<Set<string>>(new Set())
   const [path, setPath] = useState<Set<string>>(new Set())
   const [running, setRunning] = useState(false)
@@ -96,6 +102,10 @@ export function MazeVisualizer() {
   const stop = useCallback(() => {
     if (timer.current) clearInterval(timer.current)
     timer.current = null
+  }, [])
+
+  useEffect(() => {
+    setGrid(generateMaze())
   }, [])
 
   useEffect(() => () => stop(), [stop])

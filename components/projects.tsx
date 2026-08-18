@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { ArrowUpRight, Github } from 'lucide-react'
+import { ArrowUpRight } from 'lucide-react'
+import { GithubIcon } from '@/components/brand-icons'
 import { projects, type Project } from '@/lib/data'
 import { Reveal, SectionLabel } from '@/components/reveal'
 import { ProjectCaseStudy } from '@/components/project-case-study'
@@ -112,7 +113,7 @@ export function Projects() {
                           rel="noopener noreferrer"
                           className="inline-flex items-center gap-1.5 rounded-full border border-border bg-surface px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                         >
-                          <Github size={16} />
+                          <GithubIcon size={16} />
                           GitHub
                         </a>
                       </div>

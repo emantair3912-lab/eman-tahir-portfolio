@@ -2,7 +2,8 @@
 
 import { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Github, X } from 'lucide-react'
+import { X } from 'lucide-react'
+import { GithubIcon } from '@/components/brand-icons'
 import type { Project } from '@/lib/data'
 
 type Props = {
@@ -120,7 +121,7 @@ export function ProjectCaseStudy({ project, onClose }: Props) {
                 rel="noopener noreferrer"
                 className="mt-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
               >
-                <Github size={16} />
+                <GithubIcon size={16} />
                 View on GitHub
               </a>
             </div>
