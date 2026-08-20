@@ -57,30 +57,30 @@ export function ProjectCaseStudy({ project, onClose }: Props) {
             className="relative flex max-h-[92vh] w-full max-w-3xl flex-col overflow-hidden rounded-t-3xl border border-border bg-surface sm:rounded-3xl"
           >
             <div
-              className="flex items-start justify-between gap-4 px-6 pt-6 pb-5"
+              className="flex items-start justify-between gap-4 border-b border-border px-6 pt-6 pb-5"
               style={{
-                background: `linear-gradient(120deg, ${accentVar[project.palette.primary]}, ${accentVar[project.palette.secondary]})`,
+                background: `linear-gradient(120deg, color-mix(in srgb, ${accentVar[project.palette.primary]} 20%, var(--surface)), color-mix(in srgb, ${accentVar[project.palette.secondary]} 12%, var(--surface)))`,
               }}
             >
               <div>
-                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-forest/80">
+                <span className="font-mono text-xs font-semibold uppercase tracking-widest text-primary">
                   Case study {project.number}
                 </span>
                 <h2
                   id="case-study-title"
-                  className="mt-1 font-display text-2xl font-bold text-forest sm:text-3xl"
+                  className="mt-1 font-display text-2xl font-bold text-foreground sm:text-3xl"
                 >
                   {project.title}
                 </h2>
                 {project.subtitle && (
-                  <p className="mt-1 text-sm font-medium text-forest/80">{project.subtitle}</p>
+                  <p className="mt-1 text-sm font-medium text-muted-foreground">{project.subtitle}</p>
                 )}
               </div>
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close case study"
-                className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-surface/80 text-forest transition-colors hover:bg-surface"
+                className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-border bg-background text-foreground transition-colors hover:bg-muted"
               >
                 <X size={18} />
               </button>
